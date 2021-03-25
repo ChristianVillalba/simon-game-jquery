@@ -1,58 +1,59 @@
-// 1.01 - Create this file
-
-
-// 2.5 - Empty array
+var buttonColours = ["red","blue","green","yellow"];
 var gamePattern = [];
+var userClickedPattern = [];
 
+var started = false;
+var level = 0;
 
-// 2.3 - The colors in Symon Game
-let buttonColours = ["red","blue","green","yellow"];
+$(document).keypress(function(){
+  if (!started){
+    $("#level-title").text("Level" + level);
+    nextSequence();
+    started = true;
+  }
+})
 
+//What the player choose
+$(".btn").click(function() {
+  var userChosenColour = $(this).attr("id");  //this: it refers to the element that received the event.
+  userClickedPattern.push(userChosenColour);
+  simonSound(userChosenColour);
+  animatedPress(userChosenColour);
+});
 
-
-// 2.1.2 - Function that generates a number 0-3
+//The game give us the patterns to follow
 function nextSequence() {
-  return Math.floor(Math.random() * 4);
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
+  level++;
+  $("#level-title").text("Level " + level);
+  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+  simonSound(randomChosenColour);
 }
-//2.2.b variable stored
-var randomNumber = nextSequence();
-
-// 2.4 - pick a color from the list. list[]
-function randomChosenColour() {
-  return buttonColours[randomNumber];
-}
-//2.6 Add the randomChosenColour as last item in gamePattern
-gamePattern.push(randomChosenColour);
+//  select buttonColours using #id and randomNumber
+// $("#"+ randomChosenColour)
+// $(#0) = "red"
+// $(#1) = "blue"
+// $(#2) = "green"
+// $(#3) = "yellow"
 
 
-// 3.1 select buttonColours using #id
-$("#green");
-$("#red");
-$("#yellow");
-$("#blue");
-// 3.2 how to make the buttons flash
-$("# ").fadeOut(120).fadeIn(120);
-
-
-
-// 3.3 how to add sound to buttons
-function greenSound(){
-  var greenmp3 = new Audio("sounds/green.mp3");
-  greenmp3.play();
-}
-function redSound(){
-  var redmp3 = new Audio("sounds/red.mp3");
-  rednmp3.play();
-}
-function yellowSound(){
-  var yellowmp3 = new Audio("sounds/yellow.mp3");
-  yellowmp3.play();
-}
-function blueSound(){
-  var bluemp3 = new Audio("sounds/blue.mp3");
-  bluemp3.play();
+//add sound to buttons
+function simonSound(){
+  var audio = new Audio("sounds/"+name+".mp3");
+  audio.play();
 }
 function wrongSound(){
   var wrongmp3 = new Audio("sounds/wrong.mp3");
   wrongmp3.play();
 }
+
+//add animation to buttons
+function animatedPress(currentCoulour) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function(){
+    $("#" + currentColor).removeClass("pressed");
+  };100);
+}
+
