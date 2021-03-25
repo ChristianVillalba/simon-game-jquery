@@ -18,10 +18,10 @@ What I learnt with this Project:
 -Connect our html file and our js file    [Check in browser: alert("Hello World")]
 -Add the jQuery CDN to html file          [Check in DevTools: $("h1").css("color","red")]
 -Create functons and variables using JS in order to create the game pattern.
--Concatenating strings in order to access different elements in other folders.
+-Concatenating strings in order to access different elements (even in other folders).
 -Using jQuery to target elements.
 -Adding EventListeners with jQuery.
 -Response to Events:
   Higher order functions    (funtions with another function as input).
   Callback Functions        (the functions passed as input).
-
+-Adding and romoving classes with JS (The HTML element will be displayed with different CSS styles [classes])
