@@ -25,3 +25,7 @@ What I learnt with this Project:
   Higher order functions    (funtions with another function as input).
   Callback Functions        (the functions passed as input).
 -Adding and romoving classes with JS (The HTML element will be displayed with different CSS styles [classes])
+
+Personal additions:
+-Display in different portviews
+-sound controls
