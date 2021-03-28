@@ -10,19 +10,27 @@ body {
   color: #FEF2BF;
   text-shadow: 3px 0 black;
 }
+@media (max-width:992px) {
+  .only-large-view {
+          display: none;
+        }
+}
+.here{
+  color: black;
+  text-shadow: 3px 0 black;
+}
 
 .container {
-  display: block;
+  display: inline;
   width: 50%;
   margin: auto;
-
 }
 
 .btn {
   margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: 8rem;
+  width: 9rem;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -45,7 +53,7 @@ body {
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: gold;
 }
 
 .pressed {

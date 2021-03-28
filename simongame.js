@@ -8,6 +8,13 @@ var level = 0;
 //start the game
 $(document).keypress(function() {
   if (!started) {
+    $(".here").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+$("#level-title").click(function() {
+  if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
@@ -45,7 +52,7 @@ function checkAnswer(currentLevel) {
       }
     } else {
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").html("Game Over <br> <small> <span class=only-large-view>Press Any Key or</span> <a onClick=window.location.reload() class=here >Here</a> to Restart </small>");
       wrongSound();
       setTimeout(function () {
         $("body").removeClass("game-over");
