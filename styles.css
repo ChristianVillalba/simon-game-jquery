@@ -9,6 +9,7 @@ body {
   margin:  5%;
   color: #FEF2BF;
   text-shadow: 3px 0 black;
+  cursor: pointer;
 }
 @media (max-width:992px) {
   .only-large-view {
@@ -17,6 +18,10 @@ body {
 }
 .here{
   color: black;
+  text-shadow: 3px 0 black;
+}
+.here:hover{
+  color: #FEF2BF;
   text-shadow: 3px 0 black;
 }
 
