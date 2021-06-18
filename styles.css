@@ -1,13 +1,16 @@
 body {
   text-align: center;
-  background-color: #011F3F;
+  background-image: url("images/sgh.png");
 }
-
+.game-over {
+  background-image: url("images/goh3.jpg");
+  opacity: 0.8;
+}
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
-  color: #FEF2BF;
+  color: #e3fffe;
 }
 
 .container {
@@ -26,10 +29,6 @@ body {
   border-radius: 20%;
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
-}
 
 .red {
   background-color: red;
