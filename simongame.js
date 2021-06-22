@@ -31,7 +31,7 @@ function nextSequence() {
   gamePattern.push(randomChosenColour);
   userClickedPattern = [];
   level++;
-  $("#level-title").text("Level " + level);
+  $("#level-title").html("Simon Game<br> <br> <small>Level </small>" + level);
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   simonSound(randomChosenColour);
 }
@@ -55,7 +55,7 @@ function checkAnswer(currentLevel) {
       }
     } else {
       $("body").addClass("game-over");
-      $("#level-title").html("Game Over <br> <h5> <span class=only-large-view>Press Any Key or</span> <a onClick=window.location.reload() class=here >Here</a> to Restart </h5>");
+      $("#level-title").html("Game Over <br> <br> <small> <span class=only-large-view>Press Any Key </span> <span class=here >Press Here</span> to Restart </small>");
       wrongSound();
       setTimeout(function () {
         $("body").removeClass("game-over");

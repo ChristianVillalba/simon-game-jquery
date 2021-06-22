@@ -6,6 +6,7 @@ body {
   background-image: url("images/goh3.jpg");
   opacity: 0.8;
 }
+/* Title */
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
@@ -13,7 +14,9 @@ body {
   color: #e3fffe;
   text-shadow: 3px 0 black;
   cursor: pointer;
+   text-shadow: 0 0 5px black, 0 0 7px #39A2DB;
 }
+/* Responsive Title */
 @media (max-width:992px) {
   .only-large-view {
           display: none;
@@ -24,13 +27,13 @@ body {
           display: none;
         }
 }
+
+/*Simon Buttons */
 .container {
-  display: block;
+  display: inline;
   width: 50%;
   margin: auto;
-
 }
-
 .btn {
   margin: 25px;
   display: inline-block;
