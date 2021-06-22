@@ -31,7 +31,7 @@ function nextSequence() {
   gamePattern.push(randomChosenColour);
   userClickedPattern = [];
   level++;
-  $("#level-title").html("Simon Game<br> <br> <small>Level </small>" + level);
+  $("#level-title").html("Simon Game<br> <br> <small>Level    </small>" + level);
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   simonSound(randomChosenColour);
 }
